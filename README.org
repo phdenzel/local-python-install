@@ -25,13 +25,13 @@
 
     Make the directories safe from outside influence
     #+BEGIN_SRC shell
-      find ~/python -type d | xargs chmod 0755
+      find ~/local/python -type d | xargs chmod 0755
     #+END_SRC
     
     ... and finally install in your local directory with
     #+BEGIN_SRC shell
       cd Python-2.7.13
-      configure --prefix=$HOME/local/python
+      ./configure --prefix=$HOME/local/python
       make && make install
     #+END_SRC
     Make sure to include the ~--prefix~ flag, since this is where the output of ~make~ is put.

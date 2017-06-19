@@ -7,29 +7,29 @@
 
 *** Installing in ~/local/python
     First, we need to create the directories, where python has to be installed.
-    #+BEGIN_SRC shell :exports none
+    #+BEGIN_SRC shell
       mkdir -p ~/local/python
     #+END_SRC
     
     Then go to the created directories and download the python source code
     (I used 2.7.something, however if you're starting out completely new, I recommend 3.6.2).
-    #+BEGIN_SRC shell :exports none
+    #+BEGIN_SRC shell
       cd ~/local/python
       wget https://www.python.org/ftp/python/2.7.13/Python-2.7.13.tgz
     #+END_SRC
     
     Unpack it... do you remember the tar flags?
-    #+BEGIN_SRC shell :exports none
+    #+BEGIN_SRC shell
       tar zxfv Python-2.7.13.tgz
     #+END_SRC
 
     Make the directories safe from outside influence
-    #+BEGIN_SRC shell :exports none
+    #+BEGIN_SRC shell
       find ~/python -type d | xargs chmod 0755
     #+END_SRC
     
     ... and finally install in your local directory with
-    #+BEGIN_SRC shell :exports none
+    #+BEGIN_SRC shell
       cd Python-2.7.13
       configure --prefix=$HOME/local/python
       make && make install
@@ -40,13 +40,13 @@
 *** Defining path variables
 
     Now that we have locally installed python, we have to define the path to the local library.
-    #+BEGIN_SRC shell :exports none
+    #+BEGIN_SRC shell
       export PATH=$PATH:$HOME/local/python/Python-2.7.13/
       export PYTHONPATH=$HOME/local/python/Python-2.7.13
     #+END_SRC
     
     To test if it worked type
-    #+BEGIN_SRC shell :exports none
+    #+BEGIN_SRC shell
       source ~/.bash_profile
       which python
     #+END_SRC
@@ -64,12 +64,12 @@
     
     This downloads and installs ~pip~ locally in ~$HOME/.local/bin~.
     Now, we just have to update the PATH in your ~.bash_profile~ and you're good to go...
-    #+BEGIN_SRC shell :exports none
+    #+BEGIN_SRC shell
       export PATH=$PATH:$HOME/.local/bin
     #+END_SRC
     
     Again, test it with
-    #+BEGIN_SRC shell :exports none
+    #+BEGIN_SRC shell
       source ~/.bash_profile
       which pip
     #+END_SRC

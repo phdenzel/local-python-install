@@ -1,7 +1,7 @@
 #+TITLE: How to locally install python
 #+AUTHOR: phdenzel
 
-  On a server o shared machine, you might want to install stuff locally, i.e. in your home directory.
+  On a server or shared machine, you might want to install stuff locally, i.e. in your home directory.
   I often get asked how I installed python this way.
   This is what I did (more or less):
 
@@ -39,7 +39,7 @@
 
 *** Defining path variables
 
-    Now that we have locally installed python, we have to define the path to the local library.
+    Now that we have locally installed python, we have to define the path to the local library in our ~.bash_profile~.
     #+BEGIN_SRC shell
       export PATH=$PATH:$HOME/local/python/Python-2.7.13/
       export PYTHONPATH=$HOME/local/python/Python-2.7.13
@@ -57,7 +57,7 @@
 
     I use pip to install all my python libraries.
 
-    Since python is already installed, it is realtively painless to install ~pip~.
+    Since python is already installed, it is relatively painless to install ~pip~.
     #+BEGIN_SRC shell :export
     wget --no-check-certificate https://bootstrap.pypa.io/get-pip.py -O - | python - --user
     #+END_SRC

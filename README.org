@@ -34,7 +34,7 @@
       ./configure --prefix=$HOME/local/python
       make && make install
     #+END_SRC
-    Make sure to include the ~--prefix~ flag, since this is where the output of ~make~ is put.
+    Make sure to include the ~--prefix~ flag, since this is where the output of ~make~ is installed.
     On UNIX machines this is by default in ~/usr/local~.
 
 *** Defining path variables

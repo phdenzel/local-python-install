@@ -36,12 +36,19 @@
     #+END_SRC
     Make sure to include the ~--prefix~ flag, since this is where the output of ~make~ is installed.
     On UNIX machines this is by default in ~/usr/local~.
+    
+    If you've received an error message about the C compiler, you might have to change the second line to
+    #+BEGIN_SRC shell
+      CC=gcc ./configure --prefix=$HOME/local/python
+    #+END_SRC
+    or a similar compiler of your choice (that works).
+    
 
 *** Defining path variables
 
     Now that we have locally installed python, we have to define the path to the local library in our ~.bash_profile~.
     #+BEGIN_SRC shell
-      export PATH=$PATH:$HOME/local/python/Python-2.7.13/
+      export PATH=$HOME/local/python/Python-2.7.13/:$PATH
       export PYTHONPATH=$HOME/local/python/Python-2.7.13
     #+END_SRC
     

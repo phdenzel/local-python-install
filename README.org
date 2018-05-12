@@ -42,6 +42,16 @@
       CC=gcc ./configure --prefix=$HOME/local/python
     #+END_SRC
     or a similar compiler of your choice (that works).
+
+    On macOS (if you decide to install ~python~ from source code) many dependencies are very outdated!
+    That's why if you installed another Tcl/Tk version (~8.6~) for example you can specify additional flags
+
+    #+BEGIN_SRC shell
+      ./configure --prefix=$HOME/local/python \
+                  --with-tcltk-includes='-I/Library/Frameworks/Tcl.framework/Headers -I/Library/Frameworks/Tk.framework/Headers' \
+                  --with-tcltk-libs='/Library/Frameworks/Tcl.framework/Versions/8.6/Tcl /Library/Frameworks/Tk.framework/Versions/8.6/Tk'
+      make && make install
+    #+END_SRC
     
 
 *** Defining path variables
@@ -59,6 +69,7 @@
     #+END_SRC
     or something similar (like ~.bashrc~).
     If the output of ~which~ includes ~/local/python/~ it worked!
+
 
 *** Setting up pip
 

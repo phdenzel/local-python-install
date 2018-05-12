@@ -12,15 +12,15 @@
     #+END_SRC
     
     Then go to the created directories and download the python source code
-    (I used 2.7.something, however if you're starting out completely new, I recommend 3.6.2).
+    (I used 2.7.something, however if you're starting out completely new, I recommend 3.6.5).
     #+BEGIN_SRC shell
       cd ~/local/python
-      wget https://www.python.org/ftp/python/2.7.13/Python-2.7.13.tgz
+      wget https://www.python.org/ftp/python/2.7.15/Python-2.7.15.tgz
     #+END_SRC
     
     Unpack it... do you remember the tar flags?
     #+BEGIN_SRC shell
-      tar zxfv Python-2.7.13.tgz
+      tar zxfv Python-2.7.15.tgz
     #+END_SRC
 
     Make the directories safe from outside influence
@@ -30,7 +30,7 @@
     
     ... and finally install in your local directory with
     #+BEGIN_SRC shell
-      cd Python-2.7.13
+      cd Python-2.7.15
       ./configure --prefix=$HOME/local/python
       make && make install
     #+END_SRC
@@ -58,8 +58,8 @@
 
     Now that we have locally installed python, we have to define the path to the local library in our ~.bash_profile~.
     #+BEGIN_SRC shell
-      export PATH=$HOME/local/python/Python-2.7.13/:$PATH
-      export PYTHONPATH=$HOME/local/python/Python-2.7.13
+      export PATH=$HOME/local/python/bin:$PATH
+      export PYTHONPATH=$HOME/local/python/
     #+END_SRC
     
     To test if it worked type
@@ -68,7 +68,7 @@
       which python
     #+END_SRC
     or something similar (like ~.bashrc~).
-    If the output of ~which~ includes ~/local/python/~ it worked!
+    If the output of ~which~ includes ~~/local/python/~ it worked!
 
 
 *** Setting up pip
@@ -83,7 +83,7 @@
     This downloads and installs ~pip~ locally in ~$HOME/.local/bin~.
     Now, we just have to update the PATH in your ~.bash_profile~ and you're good to go...
     #+BEGIN_SRC shell
-      export PATH=$PATH:$HOME/.local/bin
+      export PATH=$HOME/.local/bin:$PATH
     #+END_SRC
     
     Again, test it with

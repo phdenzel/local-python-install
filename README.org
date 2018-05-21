@@ -52,7 +52,16 @@
                   --with-tcltk-libs='/Library/Frameworks/Tcl.framework/Versions/8.6/Tcl /Library/Frameworks/Tk.framework/Versions/8.6/Tk'
       make && make install
     #+END_SRC
+
+    On linux, Tcl can easily be installed with ~sudo apt-get install tcl8.6 tcl8.6-dev libtcl8.6 tk8.6 tk8.6-dev libtk8.6~.
+    The additional flags then are
     
+        #+BEGIN_SRC shell
+      ./configure --prefix=$HOME/local/python \
+                  --with-tcltk-includes='-I/usr/include/tcl8.6 -I/usr/include/tk8.6' \
+                  --with-tcltk-libs='/usr/lib/*-linux-gnu/libtcl8.6.so /usr/lib/*-linux-gnu/libtk8.6.so'
+      make && make install
+    #+END_SRC
 
 *** Defining path variables
 

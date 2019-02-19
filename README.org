@@ -87,7 +87,7 @@
       which python
     #+END_SRC
     or something similar (like ~.bashrc~).
-    If the output of ~which~ includes ~~/local/python/~ it worked!
+    If the output of ~which~ includes ~/local/python/~ it worked!
 
 
 *** Setting up pip

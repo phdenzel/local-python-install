@@ -65,13 +65,19 @@
     On linux, Tcl can easily be installed with ~sudo apt-get install tcl8.6 tcl8.6-dev libtcl8.6 tk8.6 tk8.6-dev libtk8.6~.
     The additional flags then are
     
-        #+BEGIN_SRC shell
+    #+BEGIN_SRC shell
       ./configure --prefix=$HOME/local/python/2.7 \
                   --with-tcltk-includes='-I/usr/include/tcl8.6 -I/usr/include/tk8.6' \
                   --with-tcltk-libs='/usr/lib/*-linux-gnu/libtcl8.6.so /usr/lib/*-linux-gnu/libtk8.6.so'
       make && make install
     #+END_SRC
 
+    On some linux machines, it can happen that ~lib-dynload~ is installed in a non-default location.
+    To easily fix this, I found that the following command usually helps
+
+    #+BEGIN_SRC shell
+      cp -r $HOME/local/python/2.7/lib64/python2.7/lib-dynload $HOME/local/python/2.7/lib/python2.7/
+    #+END_SRC
 
 *** Defining path variables
 
